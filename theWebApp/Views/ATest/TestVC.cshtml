@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "TestVC";
+}
+
+<h2>TestVC</h2>
+
+<div>
+    <ul>
+        @for (int i = 0; i < ViewBag.Number; i++)
+        {
+            <li>@ViewBag.Message + i</li>
+        }
+    </ul>
+    <ul>
+        @for (int i = 0; i < ViewBag.Number; i++)
+        {
+            <li>@ViewBag.Message@(i + 1)</li>
+        }
+    </ul>
+    <ul>
+        @for (int i = 0; i < ViewBag.Number; i++)
+        {
+            <li>@ViewBag.Message @(i + 1)</li>
+        }
+    </ul>
+    <ul>
+        @for (int i = 0; i < ViewBag.Number; i++)
+        {
+            <li>@ViewBag.Message "@(i+1)"</li>
+        }
+    </ul>
+
+    <ul>
+        @for (int i = 0; i < ViewBag.Number; i++)
+        {
+            // no output
+            @*@<li>@{string.Format(System.Globalization.CultureInfo.CurrentUICulture, "{0}{1}", ViewBag.Message, i);}</li>*@
+            // orginal output
+            @*<li>string.Format(System.Globalization.CultureInfo.CurrentUICulture, "{0}{1}", @ViewBag.Message, i);</li>*@
+            <li>string.Format(System.Globalization.CultureInfo.CurrentUICulture, "{0}{1}", @ViewBag.Message, i);</li>
+        }
+    </ul>
+</div>
