@@ -10,6 +10,7 @@ namespace theWebApp.Controllers
     {
         public ActionResult Index()
         {
+            this.ViewBag.Site = "theWebApp";
             return View();
         }
 

@@ -1,17 +1,20 @@
 ﻿
+@Model string;
+
 @{
     ViewBag.Title = "ATestView";
 
     // customize a property for viewBag, to see if we can pass it to somewhere else (eg, _layout.cshtml, controller, etc)
     // ViewBag.TTCC = "customized property for viewBag";
-    ViewBag.TTCC = "customized property  viewBag -- " + ViewBag.xxxx;
+    ViewBag.TTCC = "customized property  viewBag -- " + ViewBag.xxxx + parameter;
+
 }
 
 
 <div>
     <div><h2>ATestView</h2></div>
     <div>
-        <div style="width:50%"> left</div>
+        <div style="width:50%"> left @Model</div>
         <div style="width:50%"> right</div>
     </div>
 </div>
