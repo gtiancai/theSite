@@ -9,23 +9,31 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top topNav">
+        <div class="container">
+            <div class="space"></div>
+            <div class="topNav">
+                <div class="logo">
+                    <img src="~/Resources/logo.png" alt="theSite" />
+                </div>
+                <div class="contact">
+                    @Html.Partial("_companyTelephoneInTopNav")
+                </div>
+            </div>
+        </div>
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("关于我们", "Index", "Home")</li>
+                    <li>@Html.ActionLink("咨询服务", "About", "Home")</li>
+                    <li>@Html.ActionLink("新闻中心", "About", "Home")</li>
+                    <li>@Html.ActionLink("营销培训", "About", "Home")</li>
+                    <li>@Html.ActionLink("咨询服务", "About", "Home")</li>
+                    <li>@Html.ActionLink("联系我们", "Contact", "Home")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
@@ -33,7 +41,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - theSite</p>
         </footer>
     </div>
 

@@ -1,0 +1,42 @@
+﻿.topNav {
+    display: block;
+    background-color: #fcfcfc;
+    width: 100%;
+    /*top:1%;*/
+}
+
+.container .space {
+    height: 5px;
+    width: 100%;
+}
+
+.topNav .logo {
+    float: left;
+    width: 200px;
+}
+
+.topNav .contact {
+    float: right;
+    width: 250px;
+    text-align:right;
+    /*right: 0;*/
+    font-style:italic;
+}
+
+.body-content {
+    margin-top: 4%;
+}
+
+.contact {
+    list-style-type: none;
+    padding: 0;
+    -webkit-padding-start: 0;
+}
+
+.contact li {
+    margin-top: 8px;
+}
+.contact a {
+    text-decoration: none;
+}
+
