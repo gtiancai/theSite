@@ -21,5 +21,6 @@ namespace theSite.Models
         public string Phone { get; set; }
         public string Address { get; set; }
         public string CompanyCultureDesc { get; set; }
+        public int ID { get; set; }
     }
 }

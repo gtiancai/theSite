@@ -1,0 +1,19 @@
+﻿
+@model theSite.Models.CompanyInfo
+
+
+<div class="space"></div>
+<div class="topNav">
+    <div class="logo">
+        <img src="@Html.DisplayFor(model => model.Logo)" alt="theSite" />
+    </div>
+    <div class="contact">
+        <div>
+            <p>
+                <h2>
+                    <span>Tel: </span><span>@Html.DisplayFor(model => model.Phone)</span>
+                </h2>
+            </p>
+        </div>
+    </div>
+</div>
