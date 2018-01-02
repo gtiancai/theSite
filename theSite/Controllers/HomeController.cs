@@ -10,7 +10,9 @@ namespace theSite.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            string path = Server.MapPath("~\\" + Util.Constants.imgPath);
+            IList<string> imgs = Util.IOUtil.GetImagesToShowOnHome(path);
+            return View(imgs);
         }
 
         public ActionResult About()
