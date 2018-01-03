@@ -256,6 +256,8 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\theSite.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="DBBak\theSiteDB.mdf" />
+    <Content Include="DBBak\theSiteDB_log.ldf" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
