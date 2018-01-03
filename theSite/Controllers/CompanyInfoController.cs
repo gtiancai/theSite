@@ -120,23 +120,30 @@ namespace theSite.Controllers
         /// </summary>
         /// <returns></returns>
         [ChildActionOnly]
-        public PartialViewResult RenderTopBar()
+        public PartialViewResult RenderLogoBar()
         {
             var companyInfo = db.CompanyInfoes.FirstOrDefault();
             // Have to give it full name with extension .cshtml!!
-            return PartialView("~/Views/CompanyInfo/TopBar.cshtml", companyInfo);
-            // return PartialView("~/Views/CompanyInfo/RenderTopBar.cshtml", companyInfo);
+            return PartialView("~/Views/CompanyInfo/LogoBar.cshtml", companyInfo);
+            // return PartialView("~/Views/CompanyInfo/RenderLogoBar.cshtml", companyInfo);
         }
 
         /*
          * use such a ActionResult method will lead to stack overflow to recurely call this method and render view!!!
         [ChildActionOnly]
-        public ActionResult RenderTopBar()
+        public ActionResult RenderLogoBar()
         {
             var companyInfo = db.CompanyInfoes.FirstOrDefault();
             return View(companyInfo);
         }
         */
+
+        [ChildActionOnly]
+        public PartialViewResult RenderSiteName()
+        {
+            var companyInfo = db.CompanyInfoes.FirstOrDefault();
+            return PartialView("~/Views/CompanyInfo/SiteName.cshtml", companyInfo);
+        }
 
         protected override void Dispose(bool disposing)
         {

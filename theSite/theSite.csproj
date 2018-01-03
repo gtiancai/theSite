@@ -294,7 +294,8 @@
     <Content Include="Views\CompanyInfo\Edit.cshtml" />
     <Content Include="Views\CompanyInfo\Index.cshtml" />
     <Content Include="Views\CompanyInfo\CompanyInfoOnTop.cshtml" />
-    <Content Include="Views\CompanyInfo\TopBar.cshtml" />
+    <Content Include="Views\CompanyInfo\LogoBar.cshtml" />
+    <Content Include="Views\CompanyInfo\SiteName.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

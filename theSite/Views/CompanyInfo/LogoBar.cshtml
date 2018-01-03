@@ -5,13 +5,13 @@
 <div class="space"></div>
 <div class="topNav">
     <div class="logo">
-        <img src="@Html.DisplayFor(model => model.Logo)" alt="theSite" />
+        <img src="@string.Format("/{0}", Html.DisplayFor(comInfo=> comInfo.Logo))" alt="@this.Model.Name" />
     </div>
     <div class="contact">
         <div>
             <p>
                 <h2>
-                    <span>Tel: </span><span>@Html.DisplayFor(model => model.Phone)</span>
+                    <span>Tel: </span><span>@Html.DisplayFor(comInfo => comInfo.Phone)</span>
                 </h2>
             </p>
         </div>
