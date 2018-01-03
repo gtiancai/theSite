@@ -21,17 +21,15 @@ namespace theSite.Controllers
         }
 
         // GET: CompanyInfo/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details()
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            CompanyInfo companyInfo = db.CompanyInfoes.Find(id);
+            CompanyInfo companyInfo = db.CompanyInfoes.FirstOrDefault();
+
             if (companyInfo == null)
             {
                 return HttpNotFound();
             }
+
             return View(companyInfo);
         }
 
@@ -123,6 +121,12 @@ namespace theSite.Controllers
         public PartialViewResult RenderLogoBar()
         {
             var companyInfo = db.CompanyInfoes.FirstOrDefault();
+
+            if (companyInfo == null)
+            {
+                throw new HttpException(404, "Site not found");
+            }
+
             // Have to give it full name with extension .cshtml!!
             return PartialView("~/Views/CompanyInfo/LogoBar.cshtml", companyInfo);
             // return PartialView("~/Views/CompanyInfo/RenderLogoBar.cshtml", companyInfo);
@@ -142,6 +146,12 @@ namespace theSite.Controllers
         public PartialViewResult RenderSiteName()
         {
             var companyInfo = db.CompanyInfoes.FirstOrDefault();
+
+            if (companyInfo == null)
+            {
+                throw new HttpException(404, "Site not found");
+            }
+
             return PartialView("~/Views/CompanyInfo/SiteName.cshtml", companyInfo);
         }
 

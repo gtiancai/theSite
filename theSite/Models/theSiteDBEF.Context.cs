@@ -30,5 +30,6 @@ namespace theSite.Models
         public virtual DbSet<CompanyInfo> CompanyInfoes { get; set; }
         public virtual DbSet<Link> Links { get; set; }
         public virtual DbSet<News> News { get; set; }
+        public virtual DbSet<ContactInfo> ContactInfoes { get; set; }
     }
 }

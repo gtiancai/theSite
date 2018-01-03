@@ -1,8 +1,13 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "Contact us";
 }
 <h3>@ViewBag.Title</h3>
 
+<div class="contact">
+    @Html.Action("RenderContactInfo", "ContactInfo")
+</div>
+
+<!--
 <ul class="contact">
     <li> <strong>Tel: </strong>1234567890</li>
     <li> <strong>Address: </strong>1234567890</li>
@@ -13,3 +18,4 @@
     <li> <strong>Zip Code: </strong>1234567890</li>
     <li> <strong>Fax: </strong>1234567890</li>
 </ul>
+-->
