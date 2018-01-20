@@ -21,6 +21,12 @@ namespace theSite.Controllers
             return View(news.ToList());
         }
 
+        public ActionResult List()
+        {
+            var news = db.News.Include(n => n.User);
+            return View(news.ToList());
+        }
+
         // GET: News/Details/5
         public ActionResult Details(long? id)
         {
