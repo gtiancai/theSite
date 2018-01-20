@@ -38,7 +38,6 @@ namespace theSite.Controllers
         [ChildActionOnly]
         public PartialViewResult RenderContactInfo()
         {
-
             ContactInfo contactInfo = db.ContactInfoes.Where(c => c.IsActive == true).FirstOrDefault();
             if (contactInfo == null)
             {

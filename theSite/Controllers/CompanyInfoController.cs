@@ -120,7 +120,18 @@ namespace theSite.Controllers
         [ChildActionOnly]
         public PartialViewResult RenderLogoBar()
         {
-            var companyInfo = db.CompanyInfoes.FirstOrDefault();
+            // var companyInfo = db.CompanyInfoes.FirstOrDefault();
+            var companyInfo = new CompanyInfo
+            {
+                Name = "Site01",
+                Address = "site address",
+                CompanyCultureDesc = "Company culture descripion",
+                Email = "gtianshu@163.com",
+                ID = 1,
+                Logo = @"Resources\img\logo.png",
+                Phone = "12345679",
+                Vision = "Vision is xxxxx"
+            };
 
             if (companyInfo == null)
             {
@@ -145,7 +156,17 @@ namespace theSite.Controllers
         [ChildActionOnly]
         public PartialViewResult RenderSiteName()
         {
-            var companyInfo = db.CompanyInfoes.FirstOrDefault();
+            // var companyInfo = db.CompanyInfoes.FirstOrDefault();
+            var companyInfo = new CompanyInfo {
+                Name = "Site01"
+                , Address = "site address"
+                , CompanyCultureDesc = "Company culture descripion"
+                , Email = "gtianshu@163.com"
+                , ID = 1
+                , Logo = @"Resources\img\logo.png"
+                , Phone = "12345679"
+                , Vision = "Vision is xxxxx"
+            };
 
             if (companyInfo == null)
             {
