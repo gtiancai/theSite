@@ -23,8 +23,14 @@ namespace theSite.Controllers
 
         public ActionResult List()
         {
-            var news = db.News.Include(n => n.User);
-            return View(news.ToList());
+            // var news = db.News.Include(n => n.User);
+            // return View(news.ToList());
+            var news = new News() { ID = 2, CreatedBy = 1, CreatedDateTime = System.DateTime.Now, Detail = "hehe", ModifiedDateTime = DateTime.Now, Summary = "hello", Title = "abc", User = null };
+            IList<News> newsList = new List<News>();
+
+            newsList.Add(news);
+
+            return View(newsList);
         }
 
         // GET: News/Details/5

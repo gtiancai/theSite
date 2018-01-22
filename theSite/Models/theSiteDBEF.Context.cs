@@ -31,5 +31,7 @@ namespace theSite.Models
         public virtual DbSet<Link> Links { get; set; }
         public virtual DbSet<News> News { get; set; }
         public virtual DbSet<ContactInfo> ContactInfoes { get; set; }
+
+        public System.Data.Entity.DbSet<theSite.Models.Article> Articles { get; set; }
     }
 }

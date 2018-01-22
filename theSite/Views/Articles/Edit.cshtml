@@ -1,0 +1,97 @@
+﻿@model theSite.Models.Article
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Article</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ArticleID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CategoryID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CategoryID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CategoryID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AuthorName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AuthorName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AuthorName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PostTime, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PostTime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PostTime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @*通过设置此代码引入bootstrap 的样式，可以调整ueditor编辑器的宽度，此时为6 行
+                ，bootstrap将一个文档划分为共12行。如果不设置，ueditor将占据整个屏幕的宽度。*@
+
+                @Html.EditorFor(model => model.Content)
+                @*此辅助方法将会结合 模型中的数据注解[DataType(DataType.Multiline)]生成
+                <textarea id="content" ,name="content" rows=1 cols=2>Model.Content</textarea>标签。
+                 id和name属性均为content.去除了control-label css 属性*@
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval", "~/Content/ueditor/ueditor.config.js", "~/Content/ueditor/ueditor.all.js", "~/Content/UEditor/lang/en/en.js")
+    @*//通过路径引入 对ueditor.config.js,ueditor.all.js的引用。
+        //可以使用@Script.Render("*.js","*.js")一条语句同时渲染同个javascript文件。生成多个
+        <script type="text/javascript" src="*.js"> 文件。*@
+
+    <script type="text/javascript">
+        @*初始化一个editor对象，可以直接建立对象的初始化。
+        //方法1、初始化一个editor对象， new baidu.editor.ui.editor 新建ueditor对象，*@
+        var editor = new baidu.editor.ui.Editor({
+            UEDITOR_HOME_URL:'/Content/ueditor/',//配置编辑器路径   也可以在ueditor.config.js文件中配置。
+            iframeCssUrl:'/Content/ueditor/themes/iframe.css',//样式路径
+            // initialContent:'欢迎使用ueditor',//初始化编辑器内容
+            autoHeightEnabled:true,//高度自动增长
+            initialFrameHeight:400  //配置编辑器的初始高度为400px。
+        });
+        editor.render('Content');   //将编辑器装入 ID=Content 的文本域中。
+    </script>
+}
