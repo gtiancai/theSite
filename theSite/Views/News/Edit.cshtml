@@ -1,17 +1,15 @@
-﻿@model theSite.Models.News
-
+﻿@model theSite.ViewModels.NewsViewModel
 @{
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h3>Edit</h3>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>News</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID)
@@ -32,41 +30,41 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" hidden="hidden">
             @Html.LabelFor(model => model.Detail, htmlAttributes: new { @class = "control-label col-md-2" })
+
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Detail, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Detail, "", new { @class = "text-danger" })
+               @* @Html.EditorFor(model => model.Detail)
+                  @@Html.ValidationMessageFor(model => model.Detail, "", new { @class = "text-danger" })*@
+
+                @*empty <textare />, used to send updated data*@
+                <textarea class="text-box multi-line" id="Detail" name="Detail">
+                </textarea>
+
+            </div>
+            @*
+            <code class="col-md-10" id="Detail">
+                @this.Model.Detail
+                // ${@this.Model.Detail}
+            </code>
+            *@
+
+            @*Show raw HTML, to display correctly in editor.
+              It will show raw HTML if we use content of @Html.EditroFor(model=>model.Detail)*@
+            <div id="rawDetail">
+                @Html.Raw(Model.Detail)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CreatedBy, "CreatedBy", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("CreatedBy", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.CreatedBy, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CreatedDateTime, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CreatedDateTime, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CreatedDateTime, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ModifiedDateTime, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ModifiedDateTime, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ModifiedDateTime, "", new { @class = "text-danger" })
+                <div id="theEditor"></div>
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-default" onclick="setHtmlContent()" />
             </div>
         </div>
     </div>
@@ -75,3 +73,47 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval", "~/Content/ueditor/ueditor.config.js", "~/Content/ueditor/ueditor.all.js", "~/Content/UEditor/lang/en/en.js")
+
+    <script type="text/javascript">
+        var opts = new Array();
+        opts.UEDITOR_HOME_URL = '/Content/ueditor/';
+        opts.iframeCssUrl = '/Content/ueditor/themes/iframe.css';
+        opts.autoHeightEnabled = true;
+        opts.initialFrameHeight = 400;
+
+        // opts.push()
+        var editor = UE.getEditor('theEditor', opts, {
+            onready: function () {
+                // this.setContent('')
+                /*var detail = $('#Detail').html();
+                this.setContent(detail);
+                */
+            }
+        });
+
+        editor.ready(function () {
+            // this.setContent('');
+            var d = $('#rawDetail').html();
+            this.setContent(d);
+            @*editor.execCommand('insertHtml', d); // Same as above*@
+        })
+
+        function setHtmlContent() {
+            var content = editor.getContent();
+            $('#Detail').html(content);
+        }
+
+        $(document).ready(function () {
+            @*var detail = $('#Detail').html();
+            // editor.execCommand('insertHtml', detail);
+            editor.setContent(detail);
+            *@
+        })
+    </script>
+}

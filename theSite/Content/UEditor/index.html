@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
         "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -101,7 +101,9 @@
     function setContent(isAppendTo) {
         var arr = [];
         arr.push("使用editor.setContent('欢迎使用ueditor')方法可以设置编辑器的内容");
-        UE.getEditor('editor').setContent('欢迎使用ueditor', isAppendTo);
+        var content = "<p style=\"text-align: center;\">tests</p>";
+        // UE.getEditor('editor').setContent('欢迎使用ueditor', isAppendTo);
+        UE.getEditor('editor').setContent(content);
         alert(arr.join("\n"));
     }
     function setDisabled() {

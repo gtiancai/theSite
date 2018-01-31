@@ -1,13 +1,14 @@
-﻿@model theSite.Models.News
+﻿@model theSite.ViewModels.NewsViewModel
 
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
 <div>
-    <h4>News</h4>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -25,42 +26,13 @@
         <dd>
             @Html.DisplayFor(model => model.Summary)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Detail)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Detail)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CreatedDateTime)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CreatedDateTime)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ModifiedDateTime)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ModifiedDateTime)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.User.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.User.Name)
-        </dd>
-
     </dl>
+
+    @Html.Raw(Model.Detail)
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+@*
+<script id="Detail" name="Detail" type="text/plain" style="width: 650px; height: 500px;">
+    @Html.Raw(Model.Detail)
+</script>
+*@

@@ -222,6 +222,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="Util\Constants.cs" />
     <Compile Include="Util\IOUtil.cs" />
+    <Compile Include="ViewModels\NewsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\theSiteDB.mdf" />
@@ -602,7 +603,7 @@
     <Content Include="Views\News\Delete.cshtml" />
     <Content Include="Views\News\Details.cshtml" />
     <Content Include="Views\News\Edit.cshtml" />
-    <Content Include="Views\News\List.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\Articles\Create.cshtml" />
     <Content Include="Views\Articles\Delete.cshtml" />
     <Content Include="Views\Articles\Details.cshtml" />
