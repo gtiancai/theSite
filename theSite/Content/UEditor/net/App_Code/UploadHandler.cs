@@ -63,8 +63,9 @@ public class UploadHandler : Handler
 
         Result.OriginFileName = uploadFileName;
 
-        var savePath = PathFormatter.Format(uploadFileName, UploadConfig.PathFormat);
-        var localPath = Server.MapPath(savePath);
+        var fileName = PathFormatter.Format(uploadFileName, UploadConfig.PathFormat);
+        var filePath = Path.Combine(UploadConfig.PathPrefix, fileName);
+        var localPath = Server.MapPath(filePath);
         try
         {
             if (!Directory.Exists(Path.GetDirectoryName(localPath)))
@@ -72,7 +73,7 @@ public class UploadHandler : Handler
                 Directory.CreateDirectory(Path.GetDirectoryName(localPath));
             }
             File.WriteAllBytes(localPath, uploadFileBytes);
-            Result.Url = savePath;
+            Result.Url = fileName;
             Result.State = UploadState.Success;
         }
         catch (Exception e)
@@ -159,6 +160,75 @@ public class UploadConfig
     /// Base64 字符串所表示的文件名
     /// </summary>
     public string Base64Filename { get; set; }
+
+    public virtual string PathPrefix { get; }
+}
+
+public class ImgUploadConfig : UploadConfig
+{
+    public override string PathPrefix
+    {
+        get
+        {
+            return Config.GetString("imageUrlPrefix");
+        }
+    }
+}
+
+public class ScrawlUploadConfig : UploadConfig
+{
+    public override string PathPrefix
+    {
+        get
+        {
+            return Config.GetString("scrawlUrlPrefix");
+        }
+    }
+}
+
+public class SnapScreenUploadConfig : UploadConfig
+{
+    public override string PathPrefix
+    {
+        get
+        {
+            return Config.GetString("snapscreenUrlPrefix");
+        }
+    }
+}
+
+public class CatcherUploadConfig : UploadConfig
+{
+    public override string PathPrefix
+    {
+        get
+        {
+            return Config.GetString("catcherUrlPrefix");
+        }
+    }
+}
+
+public class VideoUploadConfig : UploadConfig
+{
+    public override string PathPrefix
+    {
+        get
+        {
+            return Config.GetString("videoUrlPrefix");
+        }
+    }
+}
+
+
+public class FileUploadConfig : UploadConfig
+{
+    public override string PathPrefix
+    {
+        get
+        {
+            return Config.GetString("fileUrlPrefix");
+        }
+    }
 }
 
 public class UploadResult

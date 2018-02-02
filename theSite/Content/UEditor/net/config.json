@@ -28,13 +28,13 @@
     "scrawlFieldName": "upfile", /* 提交的图片表单名称 */
     "scrawlPathFormat": "{yyyy}{mm}{dd}{time}{rand:6}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
     "scrawlMaxSize": 20480000, /* 上传大小限制，单位B */
-    "scrawlUrlPrefix": "/Resources/img/upload/", /* 图片访问路径前缀 */
+    "scrawlUrlPrefix": "/Resources/img/scrawl/", /* 图片访问路径前缀 */
     "scrawlInsertAlign": "none",
 
     /* 截图工具上传 */
     "snapscreenActionName": "uploadimage", /* 执行上传截图的action名称 */
     "snapscreenPathFormat": "{yyyy}{mm}{dd}{time}{rand:6}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
-    "snapscreenUrlPrefix": "/Resources/img/upload/", /* 图片访问路径前缀 */
+    "snapscreenUrlPrefix": "/Resources/img/screenshot/", /* 图片访问路径前缀 */
     "snapscreenInsertAlign": "none", /* 插入的图片浮动方式 */
 
     /* 抓取远程图片配置 */
@@ -42,14 +42,14 @@
     "catcherActionName": "catchimage", /* 执行抓取远程图片的action名称 */
     "catcherFieldName": "source", /* 提交的图片列表表单名称 */
     "catcherPathFormat": "{yyyy}{mm}{dd}{time}{rand:6}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
-    "catcherUrlPrefix": "/Resources/img/upload/", /* 图片访问路径前缀 */
+    "catcherUrlPrefix": "/Resources/img/catchImg/", /* 图片访问路径前缀 */
     "catcherMaxSize": 2048000, /* 上传大小限制，单位B */
     "catcherAllowFiles": [".png", ".jpg", ".jpeg", ".gif", ".bmp"], /* 抓取图片格式显示 */
 
     /* 上传视频配置 */
     "videoActionName": "uploadvideo", /* 执行上传视频的action名称 */
     "videoFieldName": "upfile", /* 提交的视频表单名称 */
-    "videoPathFormat": "upload/video/{yyyy}{mm}{dd}/{time}{rand:6}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
+    "videoPathFormat": "{yyyy}{mm}{dd}/{time}{rand:6}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
     "videoUrlPrefix": "/Resources/img/video/", /* 视频访问路径前缀 */
     "videoMaxSize": 102400000, /* 上传大小限制，单位B，默认100MB */
     "videoAllowFiles": [
@@ -60,7 +60,7 @@
     "fileActionName": "uploadfile", /* controller里,执行上传视频的action名称 */
     "fileFieldName": "upfile", /* 提交的文件表单名称 */
     "filePathFormat": "upload/file/{yyyy}{mm}{dd}/{time}{rand:6}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
-    "fileUrlPrefix": "/ueditor/net/", /* 文件访问路径前缀 */
+    "fileUrlPrefix": "/Resources/files/", /* 文件访问路径前缀 */
     "fileMaxSize": 51200000, /* 上传大小限制，单位B，默认50MB */
     "fileAllowFiles": [
         ".png", ".jpg", ".jpeg", ".gif", ".bmp",

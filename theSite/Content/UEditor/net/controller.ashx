@@ -17,7 +17,7 @@ public class UEditorHandler : IHttpHandler
                 action = new ConfigHandler(context);
                 break;
             case "uploadimage":
-                action = new UploadHandler(context, new UploadConfig()
+                action = new UploadHandler(context, new ImgUploadConfig()
                 {
                     AllowExtensions = Config.GetStringList("imageAllowFiles"),
                     PathFormat = Config.GetString("imagePathFormat"),
@@ -26,7 +26,7 @@ public class UEditorHandler : IHttpHandler
                 });
                 break;
             case "uploadscrawl":
-                action = new UploadHandler(context, new UploadConfig()
+                action = new UploadHandler(context, new ScrawlUploadConfig()
                 {
                     AllowExtensions = new string[] { ".png" },
                     PathFormat = Config.GetString("scrawlPathFormat"),
@@ -37,7 +37,7 @@ public class UEditorHandler : IHttpHandler
                 });
                 break;
             case "uploadvideo":
-                action = new UploadHandler(context, new UploadConfig()
+                action = new UploadHandler(context, new VideoUploadConfig()
                 {
                     AllowExtensions = Config.GetStringList("videoAllowFiles"),
                     PathFormat = Config.GetString("videoPathFormat"),
@@ -46,7 +46,7 @@ public class UEditorHandler : IHttpHandler
                 });
                 break;
             case "uploadfile":
-                action = new UploadHandler(context, new UploadConfig()
+                action = new UploadHandler(context, new FileUploadConfig()
                 {
                     AllowExtensions = Config.GetStringList("fileAllowFiles"),
                     PathFormat = Config.GetString("filePathFormat"),
