@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 3%;
     padding-bottom: 20px;
 }
 
@@ -21,39 +21,4 @@ input,
 select,
 textarea {
     max-width: 280px;
-}
-
-.link4Action {
-    border-bottom:solid 1px;
-    color: #ccc;
-}
-
-/*
-.link4Action hr {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  margin: 1px;
-}*/
-
-.label4Btn {
-    cursor:pointer;
-    color:#428bca;
-    /*font-size:14px;
-    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;*/
-    text-decoration:none;
-    font-weight:normal;
-}
-
-.label4Btn:hover {
-    text-decoration:underline;
-    /*text-shadow:1px 1px 1px #2a6496;*/
-    color:#2a6496;
-}
-
-
-.navbar {
-    border-bottom:solid 1px;
-    border-color: #ccc;
 }

@@ -3,6 +3,7 @@
     background-color: #fcfcfc;
     width: 100%;
     /*top:1%;*/
+    height:14%;
 }
 
 .container .space {
@@ -12,12 +13,15 @@
 
 .topNav .logo {
     float: left;
-    width: 200px;
+    /*width: 200px;*/
+    width:15%;
+    height:4%;
 }
 
 .topNav .contact {
     float: right;
-    width: 250px;
+    /*width: 250px;*/
+    width: 35%;
     text-align:right;
     /*right: 0;*/
     font-style:italic;
@@ -75,4 +79,47 @@
 #slideshow > div > img{
     width: 1000px;
     height:400px;
+}
+
+
+
+.link4Action {
+    border-bottom:solid 1px;
+    border-color: #ccc;
+}
+
+/*
+.link4Action hr {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin: 1px;
+}*/
+
+.label4Btn {
+    cursor:pointer;
+    color:#428bca;
+    /*font-size:14px;
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;*/
+    text-decoration:none;
+    font-weight:normal;
+    height:1%;
+}
+
+.label4Btn:hover {
+    text-decoration:underline;
+    /*text-shadow:1px 1px 1px #2a6496;*/
+    color:#2a6496;
+}
+
+
+.navbar {
+    border-bottom:solid 1px;
+    border-color: #ccc;
+}
+
+.divFullBorder {
+    border:solid 1px;
+    border-color: #ccc;
 }
