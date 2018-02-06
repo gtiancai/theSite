@@ -1,10 +1,10 @@
 ﻿<div class="navbar navbar-inverse navbar-fixed-top topNav">
     <div class="container">
-        <div class="space"></div>
+        <!--<div class="space"></div>-->
         @*@Html.Partial("~/Views/CompanyInfo/CompanyInfoOnTop.cshtml")*@
         @Html.Action("RenderLogoBar", "CompanyInfo") @*controller with name only without controller appendix*@
     </div>
-    <div class="container">
+    <div class="container" style="border-bottom:none;">
         <div class="navbar-header">
             @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         </div>

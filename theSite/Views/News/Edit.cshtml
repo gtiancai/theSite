@@ -3,7 +3,9 @@
     ViewBag.Title = "Edit";
 }
 
-<h3>Edit</h3>
+<div class="link4Action">
+        @Html.ActionLink("Back to List", "Index")  |  <label class="label4Btn" for="btnSubmit" onmousedown="setContent()">Save</label>
+</div>
 
 @using (Html.BeginForm())
 {
@@ -64,17 +66,11 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" onclick="setHtmlContent()" />
+                <input id="btnSubmit" type="submit" value="Save" class="btn btn-default" onclick="setHtmlContent()" />
             </div>
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-
 
 
 @section Scripts {

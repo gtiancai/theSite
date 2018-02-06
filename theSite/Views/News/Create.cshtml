@@ -4,14 +4,17 @@
 }
 
 <h2>Create</h2>
+<div class="link4Action">
+    @Html.ActionLink("Back to List", "Index", "News")  |  <label class="label4Btn" for="btnSubmit" onmousedown="setContent()">Create</label>
+</div>
+
+<br />
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>News</h4>
-        <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -46,7 +49,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" onmousedown="setContent()" />
+                <input id="btnSubmit" type="submit" value="Create" class="btn btn-default" onmousedown="setContent()" />
             </div>
         </div>
     </div>

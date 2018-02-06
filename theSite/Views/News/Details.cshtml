@@ -4,12 +4,12 @@
     ViewBag.Title = "Details";
 }
 
-<div>
-    <p>
+<div class="link4Action">
         @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
         @Html.ActionLink("Back to List", "Index")
-    </p>
-    <hr />
+</div>
+
+<div>
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Title)
